@@ -35,7 +35,6 @@
     </head>
 
     
-
     <body><center>
 	<h1>Sklep kowbojski</h1>
 	</center>
@@ -288,6 +287,7 @@
 	
 
 	</script>
+
 	<br><br><br><br><br>
 	<a href="orderby.php"><buttonsort>Sortuj według ceny ↓</buttonsort></a>
 
