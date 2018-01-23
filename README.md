@@ -23,15 +23,17 @@ Główna strona: **http://bamfs.grzegorz-pietrzak.pl/index.php**
 
 #### POST 
 **UWAGA!!! Żeby POST zadziałał, oprócz wejścia w link należy wysłać do strony odpowiednie Parametry!!**<br>
-/user/{id}/koszyk/dodaj     -- **parametr: "idP" jest id Produktu** - dodaje podany produkt do koszyka usera o id = {id}<br><br>
+/user/{id}/koszyk/dodaj     -- **parametr: "idP" jest id Produktu** - dodaje podany produkt do koszyka usera o id = {id}<br>
+/dodaj/user       -- **parametry: "login", "password", "firstname", "lastname", "email". UWAGA API sprawdza czy podany login/email są już zajęte, nie musicie tego robić** - dodaje użytkownika o podanych danych do bazy<br>
 
 #### PUT
-**UWAGA!!! Żeby POST zadziałał, oprócz wejścia w link należy wysłać do strony odpowiednie Parametry!!**<br>
+**UWAGA!!! Żeby PUT zadziałał, oprócz wejścia w link należy wysłać do strony odpowiednie Parametry!!**<br>
 /user/{id}/koszyk/kup       -- **brak parametrów** - zmienia status wszystkich przedmiotów ze statusem 'koszyk' na 'kupiony' i ustawia 'data' na aktualną datę (UWAGA, data ustawia się od strony API, nie wysyłajcie dat od siebie)<br><br>
+/update/user/{id}       -- **parametry: "login", "password", "firstname", "lastname", "email". UWAGA nie zostawiajcie pól pustych bo wtedy w bazie nadpisze dane pustym stringiem!!** - aktualizuje dane użytkownika<br><br>
 
 #### DELETE
-**UWAGA!!! Żeby POST zadziałał, oprócz wejścia w link należy wysłać do strony odpowiednie Parametry!!**<br>
-/user/{id}/koszyk/usun    -- **parametr: "idP" jest id Produktu** - usuwa produkt o podanym id z koszyka (UWAGA, usuwa JEDEN produkt, nie wszystkie o podanym id które są w koszyku; UWAGA2 usuwa TYLKO produktu ze statusem 'koszyk')<br><br>
+**UWAGA!!! Żeby DELETE zadziałał, oprócz wejścia w link należy wysłać do strony odpowiednie Parametry!!**<br>
+/user/{id}/koszyk/usun    -- **parametr: "idP" jest id Produktu** - usuwa produkt o podanym id z koszyka (UWAGA, usuwa JEDEN produkt, nie wszystkie o podanym id które są w koszyku; UWAGA2 usuwa TYLKO produktu ze statusem 'koszyk')<br><br><br><br>
 
 
 
@@ -41,13 +43,12 @@ GET<br>
 -<br><br>
 
 POST<br>
-/dodaj/user <br>
-/dodaj/produkt <br><br>
+-<br><br>
 
 PUT<br>
-/update/user/{id}<br>
-/update/produkt/{id}<br><br>
+-<br><br>
 
 DELETE<br>
-usun/user/{id}<br>
-usun/produkt{id}<br>
+-<br><br>
+
+**ADRES** - nowa tabela, foreign key userID, GET adress, POST adress, PUT adress
